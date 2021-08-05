@@ -2927,24 +2927,6 @@ function _flatpickr(
 }
 
 /* istanbul ignore next */
-if (
-  typeof HTMLElement !== "undefined" &&
-  typeof HTMLCollection !== "undefined" &&
-  typeof NodeList !== "undefined"
-) {
-  // browser env
-  HTMLCollection.prototype.flatpickr = NodeList.prototype.flatpickr = function (
-    config?: Options
-  ) {
-    return _flatpickr(this, config);
-  };
-
-  HTMLElement.prototype.flatpickr = function (config?: Options) {
-    return _flatpickr([this], config) as Instance;
-  };
-}
-
-/* istanbul ignore next */
 var flatpickr = function (
   selector: ArrayLike<Node> | Node | string,
   config?: Options
@@ -2997,9 +2979,5 @@ Date.prototype.fp_incr = function (days: number | string) {
     this.getDate() + (typeof days === "string" ? parseInt(days, 10) : days)
   );
 };
-
-if (typeof window !== "undefined") {
-  window.flatpickr = flatpickr;
-}
 
 export default flatpickr;
