@@ -2683,9 +2683,6 @@
             return _flatpickr(this, config);
         };
     }
-    Date.prototype.fp_incr = function (days) {
-        return new Date(this.getFullYear(), this.getMonth(), this.getDate() + (typeof days === "string" ? parseInt(days, 10) : days));
-    };
 
     return flatpickr;
 

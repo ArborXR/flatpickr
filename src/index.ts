@@ -2972,12 +2972,4 @@ if (typeof jQuery !== "undefined" && typeof jQuery.fn !== "undefined") {
   };
 }
 
-Date.prototype.fp_incr = function (days: number | string) {
-  return new Date(
-    this.getFullYear(),
-    this.getMonth(),
-    this.getDate() + (typeof days === "string" ? parseInt(days, 10) : days)
-  );
-};
-
 export default flatpickr;
